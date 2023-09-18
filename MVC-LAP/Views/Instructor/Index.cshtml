@@ -1,0 +1,48 @@
+﻿@model List<Instructor>
+
+<div class="card-body" style="margin:40px">
+    <a href="@Url.Action("AddNewInstrucore", "Instructor" , null)">
+        <div style="align-items:center" class="btn btn-success">
+
+            Add New Instructor
+        </div>
+    </a>
+</div>
+@foreach (var item in Model)
+{
+    <div class="card" style="width: 18rem; display:inline-block;    margin-right: 23px; margin-bottom: 46px;">
+        <img src="~/images/@item.Ins_Image" class="card-img-top" style="width:50%;" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">@item.Ins_Name</h5>
+            <p class="card-text"> Salary $@item.Salary</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"> Department : @item.Department.Dept_Name</li>
+
+            <li class="list-group-item"> course : @item.Course.Crs_Name</li>
+
+            <li class="list-group-item"> Manger :@item.Department.Dept_Manger</li>
+        </ul>
+        <div class="card-body">
+            <a href="@Url.Action("InstDetails", "Instructor" , new { id = @item.Ins_Id }, null)">
+                <div style="align-items:center" class="btn btn-primary">
+
+                    Details
+                </div>
+            </a>
+
+
+        </div>
+        <div class="card-body" style="margin-left: 90px; margin-top: -69px;">
+            <a href="@Url.Action("Editeinstructor", "Instructor" , new { id = @item.Ins_Id }, null)">
+                <div style="align-items:center" class="btn btn-primary">
+
+                    Edit
+                </div>
+            </a>
+
+
+        </div>
+
+    </div>
+}

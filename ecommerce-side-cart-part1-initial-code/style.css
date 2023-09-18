@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+:root {
+  --accent-color: #069fe6;
+  --light-gray: rgba(0, 0, 0, 0.1);
+}

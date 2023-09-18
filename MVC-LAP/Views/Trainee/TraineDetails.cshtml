@@ -1,0 +1,41 @@
+﻿@model Trainee
+
+
+    <div class="card" style="width: 18rem; display:inline-block;    margin-right: 23px; margin-bottom: 46px;">
+    <img src="~/images/@Model.Trn_Img" class="card-img-top" style="width:50%;" alt="...">
+
+        <div class="card-body">
+            <h5 class="card-title">@Model.Trn_Name</h5>
+        <p class="card-text"> Grade : @Model.Trn_Grade</p>
+        </div>
+        <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"> Department :@Model.Department.Dept_Name</li>
+        <li class="list-group-item"> Adress : @Model.Trn_Address</li>
+        
+
+        <li class="list-group-item"> @foreach (var item in Model.CourseTrainees)
+            {
+
+                <p style="color:green ; font-size:large" > Course  @item.Course.Crs_Name  </p>
+                    @if (item.TC_Degree< item.Course.Crs_MinDegree)
+                    {
+                    <p style="color:red" > Degree @item.TC_Degree  Fail  </p>
+
+                    }else
+                    {
+                    <p style="color:green"> Degree @item.TC_Degree  Succes  </p>
+
+                    }
+            }</li>
+       
+        <div class="card-body">
+            <a href="@Url.Action("Index", "Trainee" , new { id = Model.Trn_Id }, null)">
+                <div style="align-items:center" class="btn btn-primary">
+
+                    Details
+                </div>
+            </a>
+        </div>
+    </div>

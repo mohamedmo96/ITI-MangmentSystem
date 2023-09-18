@@ -1,0 +1,30 @@
+﻿@model TraineeAndCourseNameViewModel
+
+
+
+    <div class="card" style="width: 18rem; margin-left:500px">
+    <img src="~/images/@Model.TraineeImage" class="card-img-top" style="width:50%;" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">@Model.TrnName</h5>
+        <p class="card-text"></p>
+        </div>
+        <ul class="list-group list-group-flush">
+
+        <li class="list-group-item"> Course  : @Model.CrsName</li>
+
+        <li class="list-group-item" style="color:@Model.Coler"> Course Degree : @Model.TCDegree</li>
+        <li class="list-group-item" style="color:green"> Degree To succes  : @Model.DegTosucces </li>
+
+
+        </ul>
+    <div class="card-body" class="btn btn-primary" >
+            
+        <a  href="@Url.Action("Index", "home", null)">
+
+            Back
+        </a>
+        </div>
+    </div>
+
+
+

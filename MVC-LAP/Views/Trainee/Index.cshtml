@@ -1,0 +1,26 @@
+﻿@model List<Trainee>
+
+@foreach (var item in Model)
+{
+    <div class="card" style="width: 18rem; display:inline-block;    margin-right: 23px; margin-bottom: 46px;">
+        <img src="~/images/@item.Trn_Img" class="card-img-top" style="width:50%;" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">@item.Trn_Name</h5>
+            <p class="card-text"> Grade : @item.Trn_Grade</p>
+        </div>
+        <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"> Department :@item.Department.Dept_Name</li>
+            <li class="list-group-item"> Adress : @item.Trn_Address</li>
+        </ul>
+        <div class="card-body">
+            <a href="@Url.Action("TraineDetails", "Trainee" , new { id = @item.Trn_Id }, null)">
+                <div style="align-items:center" class="btn btn-primary">
+
+                    Details
+                </div>
+            </a>
+        </div>
+    </div>
+}

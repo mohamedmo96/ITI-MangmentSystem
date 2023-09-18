@@ -1,0 +1,34 @@
+﻿@model List<CourseTraineeViewModel>
+
+
+<div class="card-body">
+   
+        <div style="align-items:center" class="btn btn-success">
+        @ViewBag.coursename
+
+        </div>
+</div>
+
+@foreach (var item in Model)
+{
+    <div class="card" style="width: 18rem; display:inline-block;    margin-right: 23px; margin-bottom: 46px;">
+        <div class="card-body">
+            <p class="card-text">  Student Name  : @item.StudentName</p>
+        </div>
+        <div class="card-body">
+            <p class="card-text">  Student Name  : @item.CourseName</p>
+        </div>
+        <div class="card-body">
+            <p class="card-text">  Student Name  : @item.StudentDegree</p>
+        </div>
+      
+        <div class="card-body">
+            <a href="@Url.Action("Course", "Courses" , null)">
+                <div style="align-items:center" class="btn btn-primary">
+
+                    Back
+                </div>
+            </a>
+        </div>
+    </div>
+}

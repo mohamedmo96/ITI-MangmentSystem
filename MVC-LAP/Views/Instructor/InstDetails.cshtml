@@ -1,0 +1,29 @@
+﻿
+@model Instructor
+
+
+    <div class="card" style="width: 18rem; margin-left:500px">
+    <img src="~/images/@Model.Ins_Image" class="card-img-top" style="width:50%;" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Ins_Name</h5>
+        <p class="card-text">Salary $@Model.Salary</p>
+        </div>
+        <ul class="list-group list-group-flush">
+
+        <li class="list-group-item"> Department : @Model.Department.Dept_Name</li>
+        <li class="list-group-item"> Manger : @Model.Department.Dept_Manger</li>
+
+        <li class="list-group-item"> Course : @Model.Course.Crs_Name</li>
+        <li class="list-group-item"> Course Degree : @Model.Course.Crs_Degree</li>
+        <li class="list-group-item"> Degree To succes : @Model.Course.Crs_MinDegree</li>
+
+
+        </ul>
+    <div class="card-body" class="btn btn-primary" >
+            
+        <a  href="@Url.Action("Index", "home", null)">
+
+            Back
+        </a>
+        </div>
+    </div>

@@ -1,0 +1,73 @@
+﻿@model Course
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-6">
+                <!-- general form elements -->
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title"  > Add New Course </h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form action="/Courses/CreateNewCourse" method="post">
+                        <div class="text-danger"></div>
+                        <div class="card-body">
+                            <div class="form-group" style="margin-bottom:10px;">
+                                <label for="exampleInputEmail1"> Course Name</label>
+                                <input asp-for="Crs_Name"
+                                       type="text"
+                                       class="form-control"
+                                       required="required"
+                                       placeholder=" Enter Course Name">
+                            </div>
+                            <div class="form-group" style="margin-bottom:10px;">
+                                <label for="exampleInputEmail1">Departmant Name</label>
+                                <select asp-for="Dept_Id"
+                                        type="text"
+                                        class="form-control">
+                                    @foreach (Department item in ViewBag.dept)
+                                    {
+                                        <option value="@item.Dept_Id">@item.Dept_Name</option>
+                                    }
+                                    
+                                </select>
+
+                            </div>
+                            <div class="form-group" style="    margin-top: 21px;">
+                                <label asp-for="Crs_Degree" for="exampleInputEmail1"> Course Degree</label>
+                                <input asp-for="Crs_Degree"
+                                       type="text"
+                                       class="form-control"
+                                       placeholder=" Enter Degree">
+                            </div>
+                            <br />
+
+                            <div class="form-group">
+                                <label asp-for="Crs_MinDegree" > Course MinDegree</label>
+                                <input asp-for="Crs_MinDegree"
+                                       type="text"
+                                       class="form-control"
+                                       placeholder=" Enter Price ">
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.card -->
+                <!-- general form elements -->
+
+
+            </div>
+            <!--/.col (left) -->
+
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>

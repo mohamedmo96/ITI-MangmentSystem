@@ -1,0 +1,33 @@
+﻿@model List<Course>
+
+<div class="card-body">
+    <a href="@Url.Action("NewCourse", "Courses" , null)">
+        <div style="align-items:center" class="btn btn-success">
+
+            Add New Course
+        </div>
+    </a>
+</div>
+
+@foreach (var item in Model)
+{
+    <div class="card" style="width: 18rem; display:inline-block;    margin-right: 23px; margin-bottom: 46px;">
+        <div class="card-body">
+            <h5 class="card-title">@item.Crs_Name</h5>
+            <p class="card-text">  Course Degree : @item.Crs_Degree</p>
+        </div>
+        <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item">  Course Mini Degree :@item.Crs_MinDegree</li>
+        </ul>
+        <div class="card-body">
+            <a href="@Url.Action("CourseDetails", "Courses" , new { id = @item.Crs_Id }, null)">
+                <div style="align-items:center" class="btn btn-primary">
+
+                    Details
+                </div>
+            </a>
+        </div>
+    </div>
+}
